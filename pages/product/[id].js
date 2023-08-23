@@ -73,12 +73,12 @@ export default function ProductPage({ product }) {
               <Div>
                 <br />
                 {clicked ? (
-                  <Button white={1} onClick={() => addProduct(product._id)}>
+                  <Button white={1} onClick={addFeaturedToCart}>
                     <CartIcon />
                     <mark className='clicked'>Added to cart!</mark>
                   </Button>
                 ) : (
-                  <Button white={1} onClick={() => addProduct(product._id)}>
+                  <Button white={1} onClick={addFeaturedToCart}>
                     <CartIcon />
                     Add to cart
                   </Button>
