@@ -10,8 +10,6 @@
 html {
   background: repeating-linear-gradient(#f1ebeb, #eee, #f1ebeb, #eee)
     center/cover no-repeat fixed !important;
-  cursor: url('../images/arrowfinal@2x.png'), auto;
-  scroll-behavior: smooth;
   min-height: 100vh;
 }
 body {
@@ -20,12 +18,10 @@ body {
   background: transparent;
   max-width: 100vw;
   overflow-x: hidden;
-  cursor: url('../images/arrowfinal@2x.png'), auto;
-  scroll-behavior: smooth;
 }
 html,
 body {
-  cursor: url('../images/arrowfinal@2x.png'), auto;
+  cursor: url('../images/arrowfinal@2x.png'), auto !important;
   scroll-behavior: smooth;
 }
 /* #__next {
