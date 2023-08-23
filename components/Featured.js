@@ -109,7 +109,7 @@ const Featured = ({ product }) => {
                 <Desc>{product.description}</Desc>
                 <ButtonWrapper>
                   <ButtonLink
-                    href={'/products/' + product._id}
+                    href={'/product/' + product._id}
                     outline={1}
                     white={1}>
                     <BookOpen />
