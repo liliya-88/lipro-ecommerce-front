@@ -1,6 +1,7 @@
 import styled, { css } from 'styled-components'
 import Link from 'next/link'
 import ArrowPhantom from '@/hooks/ArrowPhantom'
+import LogoComponent from './Logo'
 
 const StyledFooter = styled.footer`
   width: 100vw;
@@ -10,7 +11,7 @@ const StyledFooter = styled.footer`
   background-color: rgb(19, 19, 19);
   color: #ccc;
   padding: 1rem 1.1rem;
-  min-height: fit-content;
+  min-height: 3rem;
 `
 
 const Wrapper = styled.div`
@@ -19,17 +20,12 @@ const Wrapper = styled.div`
   align-items: center;
   padding: 0;
 `
-const Logo = styled(Link)`
-  color: whitesmoke;
-  position: relative;
-  z-index: 3;
-`
 const Footer = () => {
   const date = new Date().getFullYear()
   return (
     <StyledFooter>
       <Wrapper>
-        <Logo href={'/'}>LiPro Ecommerce</Logo>
+        <LogoComponent />
         <p className='copyright'>
           © LiPro Ecommerce <span id='date'> {date} </span>All rights Reserved.
         </p>

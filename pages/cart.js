@@ -8,6 +8,8 @@ import axios from 'axios'
 import { useContext, useEffect, useState } from 'react'
 import { styled } from 'styled-components'
 import Table from '../components/Table'
+import Link from 'next/link'
+import Footer from '@/components/Footer'
 
 const ColumnsWrapper = styled.div`
   display: grid;
@@ -119,8 +121,9 @@ const CenteredMessage = styled.div`
   color: green !important;
   line-height: 1.9;
 `
+
 /* ------------------------ */
-const CartPage = () => {
+const CartPage = ({ product }) => {
   const { cartProducts, addProduct, removeProduct, clearCart } =
     useContext(CartContext)
   const [products, setProducts] = useState([])
@@ -234,28 +237,30 @@ const CartPage = () => {
                       <tr key={product._id}>
                         <ProductInfoCell>
                           <ProductImageBox>
-                            <picture>
-                              <source
-                                srcSet={product.images[0]}
-                                type='images/jpg'
-                              />
-                              <source
-                                srcSet={product.images[0]}
-                                type='images/png'
-                              />
-                              <source
-                                srcSet={product.images[0]}
-                                type='images/jpeg'
-                              />
-                              <source
-                                srcSet={product.images[0]}
-                                type='images/webp'
-                              />
-                              <img
-                                src={product.images[0]}
-                                alt={product.title}
-                              />
-                            </picture>
+                            <Link href={'/product/' + product._id}>
+                              <picture>
+                                <source
+                                  srcSet={product.images[0]}
+                                  type='images/jpg'
+                                />
+                                <source
+                                  srcSet={product.images[0]}
+                                  type='images/png'
+                                />
+                                <source
+                                  srcSet={product.images[0]}
+                                  type='images/jpeg'
+                                />
+                                <source
+                                  srcSet={product.images[0]}
+                                  type='images/webp'
+                                />
+                                <img
+                                  src={product.images[0]}
+                                  alt={product.title}
+                                />
+                              </picture>
+                            </Link>
                           </ProductImageBox>
                           <ParagraphTitle> {product.title}</ParagraphTitle>
                         </ProductInfoCell>
@@ -384,6 +389,7 @@ const CartPage = () => {
           )}
         </ColumnsWrapper>
       </Center>
+      <Footer />
     </>
   )
 }

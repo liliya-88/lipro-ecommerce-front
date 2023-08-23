@@ -58,13 +58,6 @@ const ColumnsWrapper = styled.div`
   }
 `
 const ImageWrapper = styled.div`
-  /* img {
-    max-width: 100px;
-    max-height: 80px;
-    object-fit: cover;
-    display: block;
-    margin: 0 auto;
-  } */
   img {
     border-radius: 10px;
     object-fit: cover;

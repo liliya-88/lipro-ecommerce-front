@@ -1,6 +1,7 @@
 import Button from '@/components/Button'
 import { CartContext } from '@/components/CartContext'
 import Center from '@/components/Center'
+import Footer from '@/components/Footer'
 import Header from '@/components/Header'
 import ProductImages from '@/components/ProductImages'
 import Title2 from '@/components/Title2'
@@ -88,6 +89,7 @@ export default function ProductPage({ product }) {
           </ParagraphBox>
         </ColWrapper>
       </Center>
+      <Footer />
     </>
   )
 }

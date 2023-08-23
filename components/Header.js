@@ -4,20 +4,17 @@ import Center from './Center'
 import { useContext, useState } from 'react'
 import BarsIcon from './icons/Bars'
 import { CartContext } from './CartContext'
+import LogoComponent from './Logo'
 
 const StyledHeader = styled.header`
   background-color: rgb(34, 34, 34);
   padding: 0.5rem 1.5rem;
 `
-const Logo = styled(Link)`
-  color: whitesmoke;
-  position: relative;
-  z-index: 3;
-`
 const Wrapper = styled.div`
   display: flex;
   justify-content: space-between;
   padding: 1.2rem 0;
+  width: 100%;
 `
 const StyledNav = styled.nav`
   ${(props) =>
@@ -95,7 +92,7 @@ const Header = () => {
     <StyledHeader id='top'>
       <Center>
         <Wrapper>
-          <Logo href={'/'}>LiPro Ecommerce</Logo>
+          <LogoComponent />
           <StyledNav mobileNavActive={mobileNavActive}>
             <NavLink href={'/'}>Home</NavLink>
             <NavLink href={'/products'}>All products</NavLink>
