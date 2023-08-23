@@ -12,9 +12,9 @@ const Logo = styled(Link)`
   color: whitesmoke;
   position: relative;
   z-index: 3;
-  &:hover{
-    text-shadow:0 0 5px yellow,0 0 10px white;
-    transition:all 0.3s ease;
+  &:hover {
+    text-shadow: 0 0 5px yellow, 0 0 10px white;
+    transition: all 0.3s ease;
   }
 `
 function LogoComponent() {

@@ -10,7 +10,7 @@ import { Product } from '@/models/Product'
 export default function ProductsPage({ products }) {
   return (
     <>
-      <Header />
+      <Header id='top' />
       <Center>
         <Center2>
           <Title2>

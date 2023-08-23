@@ -1,14 +1,17 @@
 import Link from 'next/link'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 
 function ArrowPhantom() {
+  const [scroll, setScroll] = useState(false)
   const handleScroll = () => {
     const scrollTop = window.pageYOffset
     const arrow = document.querySelector('.arrow-phantom')
     if (scrollTop > 500) {
       arrow.style.opacity = 1
+      setScroll(true)
     } else {
       arrow.style.opacity = 0
+      setScroll(false)
     }
   }
   useEffect(() => {

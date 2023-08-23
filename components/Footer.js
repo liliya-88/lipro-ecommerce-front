@@ -20,7 +20,7 @@ const Wrapper = styled.div`
   align-items: center;
   padding: 0;
 `
-const Footer = () => {
+const Footer = ({children}) => {
   const date = new Date().getFullYear()
   return (
     <StyledFooter>
@@ -30,6 +30,7 @@ const Footer = () => {
           © LiPro Ecommerce <span id='date'> {date} </span>All rights Reserved.
         </p>
         <ArrowPhantom />
+        {children}
       </Wrapper>
     </StyledFooter>
   )
