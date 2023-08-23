@@ -8,7 +8,7 @@ import WhiteBox from '@/components/WhiteBox'
 import CartIcon from '@/components/icons/CartIcon'
 import { mongooseConnect } from '@/lib/mongoose'
 import { Product } from '@/models/Product'
-import { useContext } from 'react'
+import { useContext, useState, useEffect } from 'react'
 import styled from 'styled-components'
 
 const ColWrapper = styled.div`
@@ -42,6 +42,18 @@ const ParagraphBox = styled.div`
 `
 export default function ProductPage({ product }) {
   const { addProduct } = useContext(CartContext)
+  const [clicked, setClicked] = useState(false)
+  useEffect(() => {
+    const clickedSet = setTimeout(() => {
+      setClicked(false)
+    }, 2000)
+    return () => clearTimeout(clickedSet)
+  }, [addProduct])
+  function addFeaturedToCart() {
+    addProduct(product._id)
+    setClicked(true)
+  }
+
   return (
     <>
       <Header />
@@ -60,9 +72,17 @@ export default function ProductPage({ product }) {
               </Div>
               <Div>
                 <br />
-                <Button primary onClick={() => addProduct(product._id)}>
-                  <CartIcon /> Add to cart
-                </Button>
+                {clicked ? (
+                  <Button white={1} onClick={() => addProduct(product._id)}>
+                    <CartIcon />
+                    <mark className='clicked'>Added to cart!</mark>
+                  </Button>
+                ) : (
+                  <Button white={1} onClick={() => addProduct(product._id)}>
+                    <CartIcon />
+                    Add to cart
+                  </Button>
+                )}
               </Div>
             </PriceRow>
           </ParagraphBox>
