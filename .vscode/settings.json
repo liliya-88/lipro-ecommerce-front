@@ -1,0 +1,9 @@
+{
+  "stripe.java.import.exclusions": [
+    
+    "**/node_modules/**",
+    "**/.metadata/**",
+    "**/archetype-resources/**",
+    "**/META-INF/maven/**"
+  ]
+}
