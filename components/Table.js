@@ -9,9 +9,7 @@ const StyledTable = styled.table`
     font-weight: 600;
     padding: 0.1rem 0.5rem 0.1rem 0.5rem;
     font-size: 0.7rem;
-    /* margin: 0 auto;
-    display: table-cell;
-    text-align: left;  */
+ 
   }
   td {
     border-top: 1px solid rgba(0, 0, 0, 0.1);

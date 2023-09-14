@@ -85,7 +85,8 @@ const Featured = ({ product }) => {
       setClicked(false)
     }, 2000)
     return () => clearTimeout(clickedSet)
-  }, [addProduct])
+  }, [ addProduct ])
+  
   function addFeaturedToCart() {
     addProduct(product._id)
     setClicked(true)

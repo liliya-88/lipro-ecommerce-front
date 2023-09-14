@@ -100,10 +100,6 @@ const QuantityLabel = styled.span`
   @media screen and (min-width: 768px) {
     display: flex;
     padding: 0.11rem 0.95rem;
-    /* justify-content: center !important;
-    text-align: center;
-    background-color: red;
-    margin: 0 auto; */
   }
 `
 const Total = styled.td`
@@ -136,6 +132,7 @@ const CartPage = ({ product }) => {
   const [isSuccess, setIsSuccess] = useState(false)
   // const [inputValue, setInputValue] = useState('')
   /* ----------- */
+  
   useEffect(() => {
     if (cartProducts.length > 0) {
       axios.post('/api/cart', { ids: cartProducts }).then((response) => {
